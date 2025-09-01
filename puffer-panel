@@ -50,31 +50,13 @@ done
 echo -e "${GRN} Thanks for Subscribing! If Not Do It Rn${NC}\n"
 sleep 1
 
-# Install PufferPanel
-echo -e "${YEL}🚀 Installing PufferPanel...${NC}"
-
-# 1) Update packages
-sudo apt update -y
-
-# 2) Install sudo (in case not installed)
-sudo apt install -y sudo
-
-# 3) Install systemctl (systemd)
-sudo apt install -y systemctl
-
-# 4) Add PufferPanel repository
+#!/bin/bash
+# Install puffer panel
+apt update
+apt install sudo
+apt install systemctl
 curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh?any=true | sudo bash
-
-# 5) Update packages again
-sudo apt update -y
-
-# 6) Install PufferPanel
-sudo apt-get install -y pufferpanel
-
-# 7) Add a PufferPanel user (interactive)
-sudo pufferpanel user add
-
-# 8) Enable PufferPanel service
-sudo systemctl enable --now pufferpanel
+sudo apt update
+sudo apt-get install pufferpanel
 
 echo -e "${GRN}✅ PufferPanel installation complete!${NC}"
